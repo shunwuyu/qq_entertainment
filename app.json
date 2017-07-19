@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/music/music",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#black",
+    "navigationBarTitleText": "娱乐之家",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "selectedColor": "#3385ff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"public/images/icons/home_light.png",
+      "selectedIconPath":"public/images/icons/home_fill_light.png"
+    }, {
+      "pagePath": "pages/music/music",
+      "text": "音乐",
+      "iconPath":"public/images/icons/music_light.png",
+      "selectedIconPath":"public/images/icons/music_fill_light.png"
+    }]
+  }
+}

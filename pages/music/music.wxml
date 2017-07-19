@@ -1,0 +1,42 @@
+<view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">新歌榜</view>
+    <scroll-view 
+    bindscroll="onScroll"
+    bindscrolltolower="onMore"
+    scroll-y="{{true}}"
+    style="height:92vh"
+    class="weui-panel__bd"
+    enable-back-to-top="{{true}}">
+        <navigator 
+        class="weui-media-box weui-media-box_appmsg"
+        hover-class="weui-cell_active"
+        wx:for="{{song_list}}"
+        wx:key="{{item.song_id}}"
+        data-song_id="{{item.song_id}}"
+        data-id="{{index}}" bindtap="onPlay">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image 
+                src="{{item.pic_big}}"
+                style="background:#ccc;"
+                class="weui-media-box__thumb">
+                </image>
+                <text class="media-rank">{{item.rank}}</text>
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{item.title}}</view>
+                <view class="weui-media-box__desc">{{item.author}}</view>
+            </view>
+        </navigator>
+        <view class="weui-loadmore">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">加载中</view>
+        </view>
+        <view class="weui-loadmore weui-loadmore_line" hidden="{{hideEmptyData}}">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+        </view>
+    </scroll-view>
+</view>
+<view class="player">
+    <image id="musicplay" animation="{{playerAnimation}}" src="{{playerSrc}}">播放</image>
+    <text class="musiclrc">{{playerLrc}}</text>
+</view>
